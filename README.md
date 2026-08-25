@@ -26,15 +26,13 @@ The main objectives of this project are to:
 
 ---
 
-## 🧠 Machine Learning Approach
+## 🧠 Machine Learning Model
 
 The project uses a **Random Forest Classifier** to predict accident severity.
 
-Random Forest was selected because it is well suited to classification problems and can work effectively with a combination of numerical and categorical features.
+Random Forest was selected because it is suitable for classification problems and can work with a combination of numerical and categorical features.
 
 ### Selected Features
-
-The model uses the following variables:
 
 * Time
 * Age band of driver
@@ -45,8 +43,6 @@ The model uses the following variables:
 
 ### Target Variable
 
-The target variable is:
-
 **Accident severity**
 
 ---
@@ -56,25 +52,12 @@ The target variable is:
 * **Python**
 * **Pandas** — data manipulation and analysis
 * **Scikit-learn** — machine learning and model evaluation
-* **Joblib** — saving the trained machine learning model
+* **Joblib** — saving the trained model
 * **CSV** — dataset format
 
 ---
 
-## 📁 Repository Contents
-
-| File                     | Description                                                                         |
-| ------------------------ | ----------------------------------------------------------------------------------- |
-| `accident-severity.py`   | Python source code for data preparation, model training, evaluation, and prediction |
-| `RTA Dataset.csv.zip`    | Road Traffic Accident dataset used for the project                                  |
-| `Accident Severity.docx` | Project documentation and report                                                    |
-| `README.md`              | Project overview and documentation                                                  |
-
----
-
 ## 🔄 Project Workflow
-
-The project follows these main steps:
 
 ```text
 Data Collection
@@ -102,75 +85,106 @@ Model Saving
 
 ---
 
-## 📈 Model Evaluation
+## 📈 Model Results
 
-The dataset is divided into:
+The dataset contained **12,316 records** before preprocessing.
 
-* **80% training data**
-* **20% testing data**
+After removing rows containing missing values, **12,008 records** remained.
 
-The model is evaluated using:
+The data was divided into:
 
-* Accuracy
-* Classification Report
-* Precision
-* Recall
-* F1-score
+* **80% training data:** 9,606 records
+* **20% testing data:** 2,402 records
 
-The exact performance results are generated when the Python program is executed.
+### Overall Accuracy
+
+**76.48%**
+
+### Classification Results
+
+| Accident Severity    | Precision | Recall |   F1-Score |
+| -------------------- | --------: | -----: | ---------: |
+| Fatal Injury         |      0.09 |   0.07 |       0.08 |
+| Serious Injury       |      0.15 |   0.12 |       0.13 |
+| Slight Injury        |      0.85 |   0.88 |       0.87 |
+| **Overall Accuracy** |           |        | **76.48%** |
+
+### Interpretation
+
+The model achieved an overall accuracy of **76.48%** and performed strongest when identifying **Slight Injury** cases.
+
+The model performed considerably worse for **Fatal Injury** and **Serious Injury** cases. This suggests that the dataset has a significant class imbalance, with far more Slight Injury cases than the other severity categories.
+
+Therefore, accuracy should not be considered the only measure of model performance for this project. Precision, recall, and F1-score provide additional insight into how well the model handles each severity class.
 
 ---
 
 ## 🔮 Example Prediction
 
-The program includes a hypothetical accident scenario using information such as:
+The trained model was tested using a hypothetical accident scenario with the following characteristics:
 
-* Time: 10:00 AM
-* Driver age band: 18–30
-* Weather: Normal
-* Road surface: Dry
-* Cause: No distancing
-* Vehicle movement: Going straight
+* **Time:** 10:00 AM
+* **Driver age band:** 18–30
+* **Weather:** Normal
+* **Cause:** No distancing
+* **Road surface:** Dry
+* **Vehicle movement:** Going straight
 
-The trained model uses these characteristics to predict the expected accident severity.
+### Prediction
+
+**Predicted Accident Severity: Serious Injury**
 
 ---
 
-## 💡 Learning Outcomes
+## 📁 Repository Contents
 
-Through this project, I gained practical experience in:
+| File                     | Description                                                                         |
+| ------------------------ | ----------------------------------------------------------------------------------- |
+| `accident_severity.py`   | Python source code for data preparation, model training, evaluation, and prediction |
+| `RTA Dataset.csv.zip`    | Road traffic accident dataset used for the project                                  |
+| `Accident Severity.docx` | Project documentation and report                                                    |
+| `README.md`              | Project documentation and overview                                                  |
+
+---
+
+## 💡 Skills Demonstrated
+
+This project provided practical experience in:
 
 * Python programming
 * Data preprocessing
-* Exploratory data analysis
-* Feature engineering
+* Data cleaning
+* Feature selection
 * Categorical data encoding
 * Machine learning classification
-* Training and testing machine learning models
+* Random Forest
+* Train/test splitting
 * Model evaluation
-* Saving trained machine learning models
+* Precision, recall, and F1-score
+* Model persistence using Joblib
 * Working with real-world datasets
 
 ---
 
 ## 🚀 Future Improvements
 
-Future versions of this project could include:
+Future versions of the project could include:
 
 * Comparing multiple machine learning algorithms.
 * Performing hyperparameter tuning.
-* Improving feature engineering.
+* Using cross-validation.
+* Applying techniques to address class imbalance.
+* Adding more relevant accident features.
+* Improving prediction performance for minority classes.
 * Adding more data visualizations.
-* Handling class imbalance using additional techniques.
-* Improving model performance through cross-validation.
-* Developing a web interface where users can enter accident information and receive a prediction.
-* Deploying the model as an API.
+* Developing a web interface for accident severity prediction.
+* Deploying the trained model as an API.
 
 ---
 
 ## 📚 Data Source
 
-The dataset used in this project was obtained from **Kaggle** and contains road traffic accident information used for educational machine learning purposes.
+The dataset used in this project is a **Road Traffic Accident (RTA) dataset obtained from Kaggle** and is used for educational and machine learning purposes.
 
 ---
 
@@ -185,7 +199,7 @@ Software Engineering Student
 
 ## ⚠️ Disclaimer
 
-This project was developed for **academic and learning purposes**. The predictions produced by the model should not be considered a substitute for professional road-safety analysis or official accident investigation.
+This project was developed for **academic and learning purposes**. The predictions produced by this model should not be considered a substitute for professional road-safety analysis, official accident investigation, or emergency decision-making.
 
 ---
 
