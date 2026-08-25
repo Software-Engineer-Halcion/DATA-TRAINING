@@ -86,6 +86,37 @@ Model Saving
 ---
 
 ## 📈 Model Results
+---
+
+## 📊 Data Visualizations
+
+The following visualizations were generated using Python and Matplotlib during the exploratory data analysis phase of the project.
+
+### 1. Accident Severity Distribution
+
+This chart shows the distribution of accidents across the different severity categories.
+
+![Accident Severity Distribution](accident_severity_distribution.png)
+
+### 2. Accidents by Weather Condition
+
+This visualization shows the number of recorded accidents under different weather conditions.
+
+![Accidents by Weather Condition](accidents_by_weather.png)
+
+### 3. Accidents by Driver Age Group
+
+This chart shows the distribution of accidents across different driver age groups.
+
+![Accidents by Driver Age Group](accidents_by_driver_age.png)
+
+### 4. Accident Severity by Weather Condition
+
+This visualization compares accident severity across different weather conditions.
+
+![Accident Severity by Weather Condition](accident_severity_by_weather.png)
+
+---
 
 The dataset contained **12,316 records** before preprocessing.
 
